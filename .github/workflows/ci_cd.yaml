@@ -45,6 +45,6 @@ jobs:
         run: |
           # Update image in deployment manifest
           sed -i "s|${{ steps.login-ecr.outputs.registry }}/$ECR_REPOSITORY:$IMAGE_TAG|${{ steps.login-ecr.outputs.registry }}/$ECR_REPOSITORY:$IMAGE_TAG|g" k8s/deployment.yaml
-          kubectl apply -f k8s/
+          kubectl apply -f k8s_manifests/
           kubectl rollout status deployment/hello-deployment --timeout=120s
           kubectl get svc -o wide
