@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY app/requirements.txt ./
 
-RUN pip install --no-cache-dir -r requirements.txt --target /app/deps
+RUN pip install --no-cache-dir -r requirements.txt
 
 # ---------- Runtime ----------
 
@@ -14,7 +14,7 @@ FROM python:3.11-alpine
 
 WORKDIR /app
 
-COPY --from=builder /app/deps /usr/lib/python3.11/site-packages
+COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
 
 COPY app/ ./
 
