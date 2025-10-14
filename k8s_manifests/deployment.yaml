@@ -17,7 +17,6 @@ spec:
       containers:
       - name: hello
         image: ${{ steps.login-ecr.outputs.registry }}/$ECR_REPOSITORY:$IMAGE_TAG
-        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
         readinessProbe:
