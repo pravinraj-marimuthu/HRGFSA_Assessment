@@ -14,7 +14,8 @@ provider "aws" {
 
 data "aws_availability_zones" "available" {}
 
-# VPC module
+# ----------------------- VPC module ---------------------------------#
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "4.0.0"
@@ -28,7 +29,8 @@ module "vpc" {
   single_nat_gateway = true
 }
 
-# EKS cluster module
+# ----------------------- EKS cluster module ----------------------- #
+
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 19.0"
@@ -48,7 +50,8 @@ module "eks" {
   }
 }
 
-# ECR repository
+# ------------------------ ECR repository ----------------------- #
+
 resource "aws_ecr_repository" "hello_repo" {
   name = "hello-k8s"
   image_scanning_configuration {
@@ -57,12 +60,4 @@ resource "aws_ecr_repository" "hello_repo" {
   lifecycle {
     prevent_destroy = false
   }
-}
-
-output "cluster_endpoint" {
-  value = module.eks.cluster_endpoint
-}
-
-output "ecr_repo_url" {
-  value = aws_ecr_repository.hello_repo.repository_url
 }

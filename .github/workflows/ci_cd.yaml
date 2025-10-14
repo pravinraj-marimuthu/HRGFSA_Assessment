@@ -49,4 +49,3 @@ jobs:
           sed -i "s|image:.*|image: $IMAGE_URI|g" k8s_manifests/deployment.yaml
           kubectl apply -f k8s_manifests/deployment.yaml
           kubectl rollout status deployment/hello-deployment --timeout=120s
-          kubectl get svc -o wide
