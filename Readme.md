@@ -99,3 +99,11 @@ nohup kubectl port-forward svc/prometheus-grafana 3000:80 -n monitoring > /tmp/g
 
 - Application URL: [application](http://acaa9573b09c141d3a0b6041b5e68b90-946784810.ap-south-1.elb.amazonaws.com/)
 - Grafana Dashboard: [grafana](http://localhost:3000/)
+
+## Clean up the project
+
+```bash
+cd terraform_configs
+terraform destroy
+kubectl delete --all --all-namespaces
+```
