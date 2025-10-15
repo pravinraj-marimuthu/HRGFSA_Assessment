@@ -40,3 +40,9 @@
 ## Observability using Prometheus and Grafana using Helm Charts
 
 <img width="1600" height="910" alt="image" src="https://github.com/user-attachments/assets/d33f7135-8fd8-43eb-bb95-0e73fd9c7edb" />
+
+<img width="1860" height="872" alt="image" src="https://github.com/user-attachments/assets/5e5cd053-1810-45b4-b61a-271e439a0020" />
+
+<img width="1870" height="850" alt="image" src="https://github.com/user-attachments/assets/49583683-69db-4753-882d-c9919b360612" />
+
+<img width="1901" height="789" alt="image" src="https://github.com/user-attachments/assets/0185001f-539f-44fd-a22e-69ac12416d45" />
