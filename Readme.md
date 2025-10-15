@@ -42,31 +42,39 @@ cd HRGFSA_Assessment
 ### 2. Configure AWS Credentials
 
 ```bash
-export AWS_ACCESS_KEY_ID=<your-access-key>
-export AWS_SECRET_ACCESS_KEY=<your-secret-key>
-export AWS_REGION=ap-south-1
+aws configure
 ```
+Fill out the details: 
+- AWS_ACCESS_KEY_ID= {{ your-access-key }}
+- AWS_SECRET_ACCESS_KEY= {{ your-secret-key }}
+- AWS_REGION= {{ your-region }}
 
 ### 3. Provision Infrastructure (Terraform)
 
 ```bash
+cd terraform_configs
 terraform init
 terraform plan
 terraform apply
 ```
-Creates VPC, EKS cluster, and ECR repository.
+This will create VPC, EKS cluster, and ECR repository.
 
 ### 4. Deploy Application (CI/CD)
 
-- Push to main triggers GitHub Actions pipeline:
+- Make a change in [app.py](https://github.com/pravinraj-marimuthu/HRGFSA_Assessment/blob/main/app/app.py) and push to main branch:
+```bash
+git add .
+git commit -m "Deploy the change"
+git push origin main
+```
+- Triggers GitHub Actions pipeline:
 - Builds Docker image.
 - Pushes image to AWS ECR.
 - Applies Kubernetes manifests.
-- Deploys Prometheus and Grafana for monitoring.
 
 ### 5. Access Services
 
-- Application: [application-website](http://acaa9573b09c141d3a0b6041b5e68b90-946784810.ap-south-1.elb.amazonaws.com/)
+- View the updated change in [application](http://acaa9573b09c141d3a0b6041b5e68b90-946784810.ap-south-1.elb.amazonaws.com/)
 - Execute below command to access the grafana using [grafana-website](http://localhost:3000/)
 ```bash
 nohup kubectl port-forward svc/prometheus-grafana 3000:80 -n monitoring > /tmp/grafana.log 2>&1 &
