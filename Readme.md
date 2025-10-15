@@ -80,6 +80,11 @@ nohup kubectl port-forward svc/prometheus-grafana 3000:80 -n monitoring > /tmp/g
 - Observability: Prometheus and Grafana dashboards monitor app and cluster health.
 - Secrets Management: Sensitive data stored securely in Kubernetes secrets.
 
+## Proof Of Concepts
+
+- Screenshots - https://github.com/pravinraj-marimuthu/HRGFSA_Assessment/blob/main/screenshots/snips.md
+- Video Presentations - https://www.loom.com/share/ae422bf7a7694629912dc2228b017564
+
 ## Live Application
 
 - Application URL: [application](http://acaa9573b09c141d3a0b6041b5e68b90-946784810.ap-south-1.elb.amazonaws.com/)
