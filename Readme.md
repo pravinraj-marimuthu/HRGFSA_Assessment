@@ -15,10 +15,20 @@ This project demonstrates a fully automated DevOps pipeline for deploying a simp
 
 - Secrets management for Grafana and Prometheus credentials.
 - Observability with Grafana dashboards and Prometheus metrics.
+- Multi-stage Build usage to optimize the Docker image size 
+- Buildx setup to improve caching and build speed
 
 ---
 
 ## Setup Instructions
+
+### Pre-requisites
+
+1. Docker 
+2. Kubernetes
+3. Helm
+4. Terraform
+5. AWS CLI
 
 ### 1. Clone the Repository
 
