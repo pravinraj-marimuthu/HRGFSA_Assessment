@@ -17,6 +17,8 @@ This project demonstrates a fully automated DevOps pipeline for deploying a simp
 - Observability with Grafana dashboards and Prometheus metrics.
 - Multi-stage Build usage to optimize the Docker image size 
 - Buildx setup to improve caching and build speed
+- Helm charts deployment of monitoring stack for easy management
+- Terraform modules usage for VPC and EKS provisioning (easy provisioning and management) 
 
 ---
 
